@@ -15,7 +15,7 @@ type FoodContent = {
 
 type FoodProps = {
   food: FoodContent;
-  handleEditFood: ({}: FoodContent) => void;
+  handleEditFood: (Object: FoodContent) => void;
   handleDelete: (id: number) => void;
 };
 

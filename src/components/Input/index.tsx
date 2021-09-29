@@ -7,10 +7,11 @@ import { IconType } from "react-icons";
 
 type InputProps = {
   name: string;
-  icon: IconType;
+  icon?: IconType;
+  placeholder: string;
 };
 
-export function Input({ name, icon: Icon, ...rest }: InputProps) {
+export function Input({ name, icon: Icon, placeholder, ...rest }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -45,6 +46,7 @@ export function Input({ name, icon: Icon, ...rest }: InputProps) {
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
         ref={inputRef}
+        placeholder={placeholder}
         {...rest}
       />
     </Container>
